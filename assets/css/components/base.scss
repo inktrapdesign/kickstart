@@ -1,0 +1,35 @@
+// Base
+// --------------------------------------------------
+
+// Border box for everything
+* {
+  box-sizing: border-box;
+}
+
+// Always show scrollbar
+html {
+  overflow-y: scroll;
+  font-size: $base-font-size;
+
+  @include media($m) {
+    font-size: $base-font-size-m !important;
+  }
+}
+
+// Use ligatures, kerning and font smoothing
+body, button, input, *:before, *:after {
+  @include font-feature-settings("kern", "liga", "pnum");
+
+  -webkit-font-smoothing: antialiased;
+}
+
+// Body styling
+body {
+  font-family: $base-font-family;
+  color: $body-text-color;
+  line-height: $base-line-height;
+  background-color: #fff;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}

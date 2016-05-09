@@ -1,0 +1,24 @@
+/* 
+PROJECT_NAME
+Built by Inktrap
+http://www.inktrap.co.uk
+*/
+
+@charset "utf-8";
+
+// Frameworks
+@import "vendor/normalize";
+@import "bourbon";
+
+// Variables
+@import "variables";
+
+// Mixins
+@import "mixins";
+
+// Styles
+@import "components/*";
+@import "partials/*";
+
+// Plugins
+// @import "vendor/plugin/";

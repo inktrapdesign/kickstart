@@ -1,0 +1,85 @@
+// Variables
+// --------------------------------------------------
+
+// Colours
+$brand-color: #393941;
+
+$border-color: #e1e1e1;
+$background-color: #f0f0f0;
+$action-color: $brand-color;
+
+$body-text-color: #53535E;
+$heading-text-color: #393941;
+
+// Fonts
+$base-font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$heading-font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$icon-font-family: "Ionicons";
+
+// Type metrics
+$base-line-height: 1.4;
+$heading-line-height: 1.2;
+
+$heading-margin: 1.2em 0 0.4em 0;
+$paragraph-margin: 0.8em;
+
+$heading-weight: 700;
+
+// Type scale
+$base-font-size: 16px;
+$h1-font-size: 2.074rem;
+$h2-font-size: 1.728rem;
+$h3-font-size: 1.44rem;
+$h4-font-size: 1.2rem;
+$h5-font-size: 1rem;
+$small-font-size: 0.833rem;
+
+// Larger scale
+$base-font-size-m: 18px;
+$h1-font-size-m: 2.441rem;
+$h2-font-size-m: 1.953rem;
+$h3-font-size-m: 1.563rem;
+$h4-font-size-m: 1.25rem;
+$h5-font-size-m: 1rem;
+$small-font-size-m: 0.8rem;
+
+// Border
+$base-border-width: 1px;
+$base-border: $base-border-width solid $border-color;
+$base-border-radius: 5px;
+
+// Grid
+$gutter-width: 2em;
+$half-gutter-width: $gutter-width / 2;
+
+$gutter-width-l: 2em;
+$half-gutter-width-l: $gutter-width / 2;
+
+$max-width: 1200px;
+$item-max-width: 800px;
+
+// Spacing
+$small-spacing: 1em;
+$base-spacing: 2em;
+$large-spacing: 3em;
+
+// Opacity
+$sub-opacity: 0.7;
+
+// Animation
+$short-duration: 0.15s;
+$base-duration: 0.3s;
+$long-duration: 0.5s;
+
+// Breakpoints
+$xsmall: 288px; // Mobile portrait
+$small: 560px; // Mobile landscape
+$medium: 720px; // Tablet portrait
+$large: 960px; // Desktop and tablet landscape
+$xlarge: 1200px; // Large desktop and TV
+
+$xs: $xsmall;
+$s: $small;
+$m: $medium;
+$l: $large;
+$xl: $xlarge;

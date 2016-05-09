@@ -1,0 +1,78 @@
+// Helpers
+// --------------------------------------------------
+
+// Invisible but can be seen by screen readers
+.invisible {
+  position: absolute;
+  left: -999em;
+  top: -999em;
+}
+
+// Really gone
+.removed {
+  display: none;
+}
+
+// Clearfix
+.clearfix {
+  zoom: 1;
+  overflow: visible !important;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+  }
+}
+
+// No margin
+.no-margin {
+  margin: 0;
+}
+
+// For testing grids
+.grid-test {
+  .item {
+    background-color: aqua !important;
+  }
+}
+
+// Breakpoint indicator (hide this in production)
+.breakpoint {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: aqua;
+  padding: 10px;
+  font-weight: bold;
+  z-index: 9999;
+
+  &:before {
+    content: '-';
+    width: 30px;
+    display: block;
+    text-align: center;
+
+    @include media($xsmall) {
+      content: 'XS';
+    }
+
+    @include media($small) {
+      content: 'S';
+    }
+
+    @include media($medium) {
+      content: 'M';
+    }
+
+    @include media($large) {
+      content: 'L';
+    }
+
+    @include media($xlarge) {
+      content: 'XL';
+    }
+  }
+}

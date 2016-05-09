@@ -1,0 +1,62 @@
+// Mixins
+// --------------------------------------------------
+
+// Icon fonts
+@mixin icon-font {
+  font-family: $icon-font-family;
+  line-height: 1;
+  display: inline-block;
+}
+
+// Media queries
+@mixin media($width) {
+  @media only screen and (min-width: #{$width}) {
+    @content;
+  }
+}
+
+// Heading sizes
+@mixin heading-style($size, $margin:false) {
+  font-family: $heading-font-family;
+  color: $heading-text-color;
+  line-height: $heading-line-height;
+  font-weight: $heading-weight;
+
+  @if $margin == true {
+    margin: $heading-margin;
+  } @else {
+    margin: 0;
+  }
+
+  @if $size == 1 {
+    font-size: $h1-font-size;
+
+    @include media($medium) {
+      font-size: $h1-font-size-m;
+    }
+  } @else if $size == 2 {
+    font-size: $h2-font-size;
+
+    @include media($medium) {
+      font-size: $h2-font-size-m;
+    }
+  } @else if $size == 3 {
+    font-size: $h3-font-size;
+
+    @include media($medium) {
+      font-size: $h3-font-size-m;
+    } 
+  } @else if $size == 4 {
+    font-size: $h4-font-size;
+
+    @include media($medium) {
+      font-size: $h4-font-size-m;
+    }
+  } @else {
+    font-size: $h5-font-size;
+
+    @include media($medium) {
+      font-size: $h5-font-size-m;
+    }
+  }
+}

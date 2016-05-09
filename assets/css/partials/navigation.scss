@@ -1,0 +1,171 @@
+// Navigation
+// --------------------------------------------------
+
+.header {
+  @include transition(all 0.3s);
+
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: $gutter-width / 2;
+  z-index: 999;
+}
+
+.header--stuck {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 0;
+  z-index: 999;
+
+  @include media($medium) {
+    padding-top: $gutter-width / 2;
+    padding-bottom: $gutter-width / 2;
+    border-bottom: $base-border;
+    
+    .header__logo {
+      width: 3.5em;
+      height: 3.5em;
+    }
+  }
+}
+
+.header__brand {
+  position: relative;
+  margin-top: $gutter-width / 2;
+  margin-bottom: 0;
+  padding-bottom: $gutter-width / 2;
+  border-bottom: $base-border;
+
+  @include media($medium) {
+    border-bottom: none;
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.header__logo {
+  @include transition(all 0.3s);
+
+  display: block;
+  width: 5em;
+  height: 5em;
+  margin: 0 auto;
+
+  @include media($medium) {
+    margin: 0;
+  }
+}
+
+.header__nav {
+  @include transition(all 0.3s);
+
+  height: 0;
+  padding: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  @include media($medium) {
+    @include flex(4);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-end);
+    @include align-items(center);
+
+    height: auto;
+    background-color: transparent;
+    padding: 0 ($gutter-width / 2);
+    margin-bottom: 0;
+  }
+
+  @include media($large) {
+
+  }
+
+  .nav-visible & {
+    height: 22.5em;
+
+    @include media($medium) {
+      height: auto;
+    }
+  }
+}
+
+.nav {
+  @include media($medium) {
+    //display: inline-block;
+  }
+}
+
+.nav__item {
+  display: block;
+  font-family: $heading-font-family;
+  font-size: $h4-font-size;
+
+  @include media($medium) {
+    display: inline-block;
+    font-family: $base-font-family;
+    font-size: $base-font-size-m;
+    margin-left: 1em;
+  }
+
+  @include media($large) {
+   
+  }
+}
+
+.nav__link {
+  display: block;
+  color: #fff;
+  padding: 0.5em ($gutter-width / 2);
+
+  @include media($medium) {
+    color: $body-text-color;
+    padding: 0.3em 0;
+
+    .header-light & {
+      color: #fff;
+    }
+
+    .header-light .header--stuck & {
+      color: $body-text-color;
+    }
+  }
+
+  &:after {
+    content: '\203A';
+    float: right;
+
+    @include media($medium) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+
+    @include media($medium) {
+      background-color: transparent;
+      color: darken($action-color, 25%);
+    }
+  }
+
+  .nav__item--active & {
+    @include media($medium) {
+      color: darken($action-color, 25%);
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid $action-color;
+
+      .header-light & {
+        color: #fff;
+        border-bottom-color: #fff;
+      }
+
+      .header-light .header--stuck & {
+        color: darken($action-color, 25%);
+        border-bottom-color: $action-color;
+      }
+    }
+  }
+}

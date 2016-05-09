@@ -1,0 +1,29 @@
+// Lists
+// --------------------------------------------------
+
+// Ordered and unordered
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.ul, .ol, .wysiwyg ul, .wysiwyg ol {
+  margin-left: 1.5em;
+}
+
+.ul, .wysiwyg ul {
+  margin-bottom: $paragraph-margin;
+
+  li {
+    list-style: disc outside;
+  }
+}
+
+.ol, .wysiwyg ol {
+  margin-bottom: $paragraph-margin;
+
+  li {
+    list-style: decimal outside;
+  }
+}

@@ -1,0 +1,10 @@
+// Icons
+// --------------------------------------------------
+
+[data-icon]:before {
+  font-family: $icon-font-family;
+  content: attr(data-icon);
+  speak: none;
+  line-height: 1;
+  margin-top: 1em;
+}
