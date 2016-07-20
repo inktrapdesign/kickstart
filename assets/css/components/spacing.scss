@@ -1,0 +1,62 @@
+// Spacing
+// --------------------------------------------------
+
+.spacing {
+  & > * + * {
+    margin-top: $base-spacing;
+
+    @include media($m) {
+      margin-top: $base-spacing-m;
+    }
+  }
+}
+
+.spacing--until-m {
+  & > * + * {
+    margin-top: $base-spacing;
+
+    @include media($m) {
+      margin-top: 0;
+    }
+  }
+}
+
+.spacing--half {
+  & > * + * {
+    margin-top: $half-spacing;
+
+    @include media($m) {
+      margin-top: $half-spacing-m;
+    }
+  }
+}
+
+.spacing--half-until-m {
+  & > * + * {
+    margin-top: $half-spacing;
+
+    @include media($m) {
+      margin-top: 0;
+    }
+  }
+}
+
+.spacing--double {
+  & > * + * {
+    margin-top: $double-spacing;
+
+    @include media($m) {
+      margin-top: $double-spacing-m;
+    }
+  }
+}
+
+.spacing--double-until-m {
+  & > * + * {
+    margin-top: $double-spacing;
+
+    @include media($m) {
+      margin-top: 0;
+    }
+  }
+}

@@ -6,3 +6,29 @@ img {
   margin: 0;
   max-width: 100%;
 }
+
+.image {
+
+}
+
+.image--left, .image--right {
+  margin-top: 5px !important;
+  width: 50%;
+  margin-bottom: $base-spacing;
+}
+
+.image--left {
+  float: left;
+  margin-right: $base-spacing;
+}
+
+.image--right {
+  float: right;
+  margin-left: $base-spacing;
+}
+
+.image--full {
+  width: 100%;
+  margin-top: $base-spacing !important;
+  margin-bottom: $base-spacing;
+}

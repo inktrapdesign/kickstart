@@ -1,13 +1,6 @@
 // Forms
 // --------------------------------------------------
 
-fieldset {
-  background-color: lighten($border-color, 10%);
-  border: $base-border;
-  margin: 0 0 $small-spacing;
-  padding: $base-spacing;
-}
-
 input,
 label,
 select {
@@ -15,16 +8,12 @@ select {
 }
 
 label {
-  margin-bottom: $small-spacing / 2;
+  margin-bottom: $half-spacing;
   font-family: $heading-font-family;
   font-weight: 500;
 
   &.required::after {
     content: "*";
-  }
-
-  abbr {
-    display: none;
   }
 }
 
@@ -37,7 +26,7 @@ textarea {
   box-shadow: none;
   box-sizing: border-box;
   font-family: $base-font-family;
-  margin-bottom: $small-spacing;
+  margin-bottom: $half-spacing;
   padding: 0.3em 0.7em 0.5em 0.7em;
   transition: border-color;
   width: 100%;
@@ -64,11 +53,11 @@ input[type="search"] {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
-  margin-right: $small-spacing / 2;
+  margin-right: $half-spacing;
 }
 
 input[type="file"] {
-  padding-bottom: $small-spacing;
+  padding-bottom: $half-spacing;
   width: 100%;
 }
 

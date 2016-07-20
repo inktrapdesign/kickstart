@@ -1,9 +1,11 @@
 # Craft
+/craft/app/*
 /craft/storage/*
-!/craft/storage/logo/*
-assets/uploads/*
-craft/config/db.php
-craft/config/license.key
+!/craft/storage/rebrand/*
+/craft/config/db.php
+/craft/config/license.key
+/public_html/uploads/*
+/public_html/.htaccess
 
 # Other stuff
 .DS_Store
@@ -20,6 +22,4 @@ dwsync.xml
 logs/*
 node_modules
 .codekit-cache
-config.codekit
 .sass-cache
-.htaccess

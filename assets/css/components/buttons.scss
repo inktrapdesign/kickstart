@@ -2,43 +2,92 @@
 // --------------------------------------------------
 
 .btn {
-  @include transition(background 0.2s);
+  @include transition(all $short-duration ease-in-out);
 
   display: inline-block;
   color: #fff;
   background-color: $action-color;
-  padding: 0.6em 1em;
-  margin: 0.4em 0.4em 0.5em 0;
-  font-family: $heading-font-family;
-  font-weight: 500;
-  text-transform: uppercase;
+  padding: $half-spacing $base-spacing;
+  margin-right: $half-spacing;
+  font-family: $base-font-family;
+  font-weight: bold;
   border-radius: $base-border-radius;
   border: none;
+  margin-top: $base-spacing;
 
-  &:hover, &:active {
-    background-color: shade($action-color, 15%);
+  &:hover, &:focus {
     color: #fff;
+    background-color: shade($action-color, 10%);
+    outline: none;
   }
 
-  &:focus {
-    color: #fff;
+  &:active {
+    background-color: shade($action-color, 20%);
   }
 }
 
 .btn--secondary {
-  border-color: grey;
-  color: grey;
+  background-color: $dark-color;
 
-  &:hover {
-    background-color: grey;
+  &:hover, &:active {
+    background-color: shade($brand-color, 15%);
+    color: #fff;
   }
 }
 
+.btn--large {
+  padding: 1em 1.6em;
+}
+
 .btn--link {
-  padding-left: 0;
-  padding-right: 0;
   background-color: transparent;
   color: $action-color;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: $half-spacing;
+  margin-right: $half-spacing;
+
+  &:hover, &:focus {
+    color: shade($action-color, 10%);
+    background-color: transparent;
+  }
+
+  &:active {
+    color: shade($action-color, 20%);
+    background-color: transparent;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: calc(#{$half-spacing} - 2px);
+    left: 0;
+    background-color: tint($action-color, 60%);
+  }
+
+  &:after {
+    @include transition(all $base-duration ease-in-out);
+    @include transform(scaleX(0));
+
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: calc(#{$half-spacing} - 2px);
+    left: 0;
+    visibility: hidden;
+    background-color: $action-color;
+  }
+
+  &:hover:after {
+    @include transform(scaleX(1));
+
+    background-color: $action-color;
+    visibility: visible;
+  }
 }
 
 .btn--icon {
@@ -70,4 +119,9 @@
     content: '\f10a';
     top: 3px;
   }
+}
+
+.btn--block {
+  width: 100%;
+  display: block;
 }

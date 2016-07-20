@@ -15,12 +15,18 @@
   }
 }
 
+@mixin hidpi() {
+  @media (webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+    @content;
+  }
+}
+
 // Heading sizes
 @mixin heading-style($size, $margin:false) {
   font-family: $heading-font-family;
-  color: $heading-text-color;
   line-height: $heading-line-height;
   font-weight: $heading-weight;
+  color: $heading-text-color;
 
   @if $margin == true {
     margin: $heading-margin;
@@ -31,31 +37,31 @@
   @if $size == 1 {
     font-size: $h1-font-size;
 
-    @include media($medium) {
+    @include media($m) {
       font-size: $h1-font-size-m;
     }
   } @else if $size == 2 {
     font-size: $h2-font-size;
 
-    @include media($medium) {
+    @include media($m) {
       font-size: $h2-font-size-m;
     }
   } @else if $size == 3 {
     font-size: $h3-font-size;
 
-    @include media($medium) {
+    @include media($m) {
       font-size: $h3-font-size-m;
     } 
   } @else if $size == 4 {
     font-size: $h4-font-size;
 
-    @include media($medium) {
+    @include media($m) {
       font-size: $h4-font-size-m;
     }
   } @else {
     font-size: $h5-font-size;
 
-    @include media($medium) {
+    @include media($m) {
       font-size: $h5-font-size-m;
     }
   }

@@ -19,34 +19,75 @@
   <link rel="stylesheet" href="assets/css/main.css">
 
   <!-- Fonts -->
-  <!-- Typekit here -->
+  <!-- Typekit or Google Fonts here -->
 
   <!-- Theme colours and icons -->
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="">
   <meta name="application-name" content=""/>
-  <meta name="theme-color" content="#">
+  <meta name="theme-color" content="">
+
+  <!-- Polyfills -->
+  <!-- Javascript polyfills here -->
 </head>
-<body class="grid-test">
-  
-  <!-- Browser upgrade -->
+
+<body class="">
+  <!-- Browser upgrade notice -->
   <!--[if lte IE 10]>
-    <p class="browserupgrade">You are using an outdated browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browser-upgrade">You are using an outdated browser. Please <a href="http://browsehappy.com">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <header class="container header">
+    <div class="row">
+      <div class="item">
+        <a href="#" class="logo">Kickstart</a>
+      </div>
+
+      <nav class="item">
+        <ul class="nav nav--main">
+          <li class="nav__item is-current"><a href="#">Home</a></li>
+          <li class="nav__item"><a href="#">Blog</a></li>
+          <li class="nav__item"><a href="#">About</a></li>
+          <li class="nav__item nav__item--button"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <div class="container">
     <div class="row">
-      <div class="item item--half">
-        <p>Hello.</p>
+      <div class="item item--max-width">
+        <h1 class="h1">This is heading 1 text</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum blanditiis pariatur explicabo dolore, laborum laboriosam atque, <a href="#">inline link</a> asperiores culpa vitae aliquam <em>emphasis</em> commodi nobis repellendus! <strong>Strong</strong> debitis nostrum, repellendus quam impedit.</p>
+
+        <h2 class="h2">Heading two goes here</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ea hic odit maiores tenetur laudantium nulla, ipsum dolorem labore repudiandae, debitis beatae rem modi aperiam cupiditate, in accusantium natus itaque.</p>
+        <p>Vero blanditiis facere vel magni culpa adipisci aliquam quia, cupiditate accusamus expedita alias, reiciendis non veritatis facilis consectetur consequatur nulla inventore nesciunt.</p>
+
+        <a href="#" class="btn">This is an a</a>
+        <button class="btn">This is a button</button>
+        <a href="#" class="btn btn--link">This is a link button</a>
+
+        <h3 class="h3">Heading three</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+        <h3 class="h4">Heading four</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+        <h3 class="h5">Heading five</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+        <p class="h2">Paragraph that looks like h2</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ea hic odit maiores tenetur laudantium nulla, ipsum dolorem labore repudiandae, debitis beatae rem modi aperiam cupiditate, in accusantium natus itaque.</p>
       </div>
     </div>
   </div>
 
   <div class="container">
     <div class="row">
-      <div class="item item--half">
-        <p>Half</p>
+      <div class="item item--full">
+        <p>Full</p>
       </div>
 
       <div class="item item--half">
@@ -55,16 +96,61 @@
 
       <div class="item item--half">
         <p>Half</p>
+      </div>
+
+      <div class="item item--third">
+        <p>Third</p>
+      </div>
+
+      <div class="item item--third">
+        <p>Third</p>
+      </div>
+
+      <div class="item item--third">
+        <p>Third</p>
+      </div>
+
+      <div class="item item--third">
+        <p>Third</p>
+      </div>
+
+      <div class="item item--two-thirds">
+        <p>Two thirds</p>
+      </div>
+
+      <div class="item item--quarter">
+        <p>Quarter</p>
+      </div>
+
+      <div class="item item--quarter">
+        <p>Quarter</p>
+      </div>
+
+      <div class="item item--quarter">
+        <p>Quarter</p>
+      </div>
+
+      <div class="item item--quarter">
+        <p>Quarter</p>
+      </div>
+
+      <div class="item item--quarter">
+        <p>Quarter</p>
+      </div>
+
+      <div class="item item--three-quarters">
+        <p>Three quarters</p>
       </div>
     </div>
   </div>
 
+  <!-- Breakpoint indicator -->
   <div class="breakpoint"></div>
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   
   <!-- Javascript -->
-  <script src="assets/js/load.min.js"></script>
+  <script src="assets/js/min/load-min.js"></script>
 </body>
 </html>

@@ -3,20 +3,32 @@
 
 // Container
 .container {
-  padding-left: $half-gutter-width;
-  padding-right: $half-gutter-width;
-  margin-bottom: $gutter-width;
+  padding: $half-gutter-width;
 
-  @include media($large) {
-    padding-left: $half-gutter-width-l;
-    padding-right: $half-gutter-width-l;
-    margin-bottom: $gutter-width-l;
+  @include media($l) {
+    padding: $half-gutter-width-l;
   }
 }
 
 .container--flush {
+  padding: 0;
+
+  @include media($m) {
+    padding: $gutter-width $half-gutter-width;
+  }
+
   .row {
-    margin-bottom: 0;
+    padding: 0;
+
+    @include media($m) {
+      padding-left: $half-gutter-width;
+      padding-right: $half-gutter-width;
+    }
+    
+    @include media($l) {
+      padding-left: $half-gutter-width-l;
+      padding-right: $half-gutter-width-l;
+    }
   }
 
   .item {
@@ -31,7 +43,7 @@
 
 // Containers with alternating items on desktop
 .container--alternate-reverse {
-  @include media($medium) {
+  @include media($m) {
     .row:nth-child(2n) {
       @include flex-direction(row-reverse);
     }
@@ -47,23 +59,39 @@
   max-width: $max-width;
   margin: 0 auto;
 
-  @include media($medium) {
+  @include media($m) {
     @include flex-direction(row);
   }
 }
 
+.row--align-center {
+  @include justify-content(center);
+}
+
+.row--align-right {
+  @include justify-content(flex-end);
+}
+
+.row--vertical-center {
+  @include align-items(center);
+}
+
 // Items
 .item {
-  @include flex(1);
+  @include flex(1 0 auto);
 
   display: block;
+  width: 100%;
   min-width: 1px; // Fix weird wrapping issues
   padding: 0 $half-gutter-width; // Column spacing
-  margin-bottom: $gutter-width;
 
-  @include media($large) {
+  @include media($m) {
+    width: auto;
+    max-width: 100%;
+  }
+
+  @include media($l) {
     padding: 0 $half-gutter-width-l;
-    margin-bottom: $gutter-width-l;
   }
 }
 
@@ -71,57 +99,83 @@
   @include display(flex);
 }
 
-.item--half {
+.item--full {
+  @include flex-basis(100%);
   max-width: 100%;
+}
 
-  @include media($medium) {
+.item--half {
+  @include flex-basis(100%);
+  width: 100%;
+
+  @include media($m) {
     @include flex-basis(50%);
     max-width: 50%;
   }
 }
 
 .item--quarter {
-  @include flex-basis(50%);
-  max-width: 50%;
+  @include flex-basis(100%);
+  width: 100%;
 
-  @include media($medium) {
+  @include media($m) {
     @include flex-basis(25%);
     max-width: 25%;
+  }
+}
+
+.item--three-quarters {
+  @include flex-basis(100%);
+  width: 100%;
+
+  @include media($m) {
+    @include flex-basis(75%);
+    max-width: 75%;
   }
 }
 
 .item--third {
   max-width: 100%;
 
-  @include media($medium) {
+  @include media($m) {
     @include flex-basis(33.3333%);
     max-width: 33.3333%;
   }
 }
 
+.item--two-thirds {
+  width: 100%;
+
+  @include media($m) {
+    @include flex-basis(66.6666%);
+    max-width: 66.6666%;
+  }
+}
+
 .item--max-width {
+  width: 100%;
   max-width: $item-max-width;
 }
 
-.item--no-margin {
-  margin-bottom: 0;
+.item--with-spacing {
+  margin-bottom: $gutter-width;
+
+  @include media($l) {
+    margin-bottom: $gutter-width-l;
+  }
 }
 
 // Padded boxes
 .content {
-  @include display(flex);
-  @include justify-content(flex-start);
-
   padding: $gutter-width;
 
-  @include media($large) {
+  @include media($l) {
     padding: $gutter-width-l;
   }
 }
 
 .content--vertical-center {
   @include display(flex);
-  @include flex-direction(column);
   @include justify-content(center);
 }
 

@@ -5,13 +5,22 @@
 // @include font-face("Ionicons", "../fonts/ionicons", $file-formats: eot svg ttf woff);
 
 // Paragraphs
-p {
-  margin-top: 0;
-  margin-bottom: $paragraph-margin;
+p, .p {
+  font-size: 1rem;
+  margin-top: $half-spacing;
+  margin-bottom: 0;
+}
+
+.p-large {
+  font-size: $h4-font-size;
+
+  @include media($m) {
+    font-size: $h4-font-size-m;
+  }
 }
 
 // Headings
-// Type scale generated at http://bit.ly/1G9C9Uw
+// Use the heading-style mixin wherever you need heading styles
 .h1, .wysiwyg h1 {
   @include heading-style(1, true);
 }
@@ -49,11 +58,14 @@ small, .small {
 }
 
 // Selected text style
-::selection {}
+@include selection {
+  background-color: $brand-color;
+  color: #fff;
+}
 
 // Emphasis
 strong, b {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 em, i {
@@ -62,36 +74,45 @@ em, i {
 
 // Links
 a {
-  @include transition(color 0.2s);
+  @include transition(all $short-duration);
 
-  color: $body-text-color;
+  color: $action-color;
+  font-weight: bold;
   text-decoration: none;
 
   &:hover,
-  &:active,
   &:focus {
-    color: darken($action-color, 25%);
+    color: darken($action-color, 10%);
+    outline: none;
   }
 
-  &:active,
-  &:focus {
-    outline: none;
+  &:active {
+    color: darken($action-color, 20%);
   }
 }
 
 p a, .inline-link {
-  display: inline-block;
   position: relative;
 
-  &:after {
+  &:before {
+    @include transition(all $base-duration ease-in-out);
+    @include transform(scaleX(0));
+
     content: '';
     position: absolute;
-    left: 0;
-    display: inline-block;
-    height: 1em;
     width: 100%;
-    border-bottom: 1px solid;
-    margin-top: 5px;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: tint($action-color, 60%);
+    visibility: hidden;
+  }
+
+  &:hover:before {
+    @include transform(scaleX(1));
+
+    background-color: $action-color;
+    visibility: visible;
   }
 }
 
@@ -101,5 +122,41 @@ hr {
   border-left: none;
   border-right: none;
   border-top: none;
-  margin: $base-spacing 0;
+  margin: $gutter-width 0;
+}
+
+// Blockquotes
+.blockquote {
+  clear: both;
+  width: 100%;
+  margin-left: 0;
+  margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
+}
+
+.blockquote__quote {
+  padding-left: $base-spacing;
+  border-left: 5px solid $brand-color;
+  font-style: italic;
+  font-size: 1.2em;
+  text-indent: -0.4em;
+  margin-bottom: $half-spacing;
+
+  &:before {
+    content: "\201C";
+  }
+
+  &:after {
+    content: "\201D";
+  }
+}
+
+.blockquote__source {
+  margin-left: calc(#{$base-spacing} + 5px);
+  font-style: normal;
+
+  &:before {
+    content: "\2014";
+    margin-right: 0.2em;
+  }
 }

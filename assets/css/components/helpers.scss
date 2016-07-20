@@ -1,16 +1,33 @@
 // Helpers
 // --------------------------------------------------
 
-// Invisible but can be seen by screen readers
-.invisible {
+// Hide elements
+.hidden {
+  display: none;
+}
+
+// Hide elements until a specific breakpoint
+.hidden-until-m {
+  display: none;
+
+  @include media($m) {
+    display: block;
+  }
+}
+
+.hidden-until-l {
+  display: none;
+
+  @include media($l) {
+    display: block;
+  }
+}
+
+// Hidden but can still be seen by screen readers
+.sr-only {
   position: absolute;
   left: -999em;
   top: -999em;
-}
-
-// Really gone
-.removed {
-  display: none;
 }
 
 // Clearfix
@@ -26,27 +43,40 @@
   }
 }
 
-// No margin
+// Remove all margins
 .no-margin {
   margin: 0;
 }
 
-// For testing grids
+// Grid testing
+// Add to the body to highlight the grid for debugging
 .grid-test {
+  .container {
+    background-color: goldenrod !important;
+    border: 1px solid darken(goldenrod, 20%);
+  }
+
+  .row {
+    background-color: fuchsia !important;
+    border: 1px solid darken(fuchsia, 20%);
+  }
+
   .item {
     background-color: aqua !important;
+    border: 1px solid darken(aqua, 20%);
   }
 }
 
 // Breakpoint indicator (hide this in production)
 .breakpoint {
-  display: none;
+  display: block;
   position: fixed;
   bottom: 0;
   left: 0;
   background-color: aqua;
   padding: 10px;
   font-weight: bold;
+  font-size: 18px;
   z-index: 9999;
 
   &:before {
@@ -54,24 +84,21 @@
     width: 30px;
     display: block;
     text-align: center;
+    content: 'XS';
 
-    @include media($xsmall) {
-      content: 'XS';
-    }
-
-    @include media($small) {
+    @include media($s) {
       content: 'S';
     }
 
-    @include media($medium) {
+    @include media($m) {
       content: 'M';
     }
 
-    @include media($large) {
+    @include media($l) {
       content: 'L';
     }
 
-    @include media($xlarge) {
+    @include media($xl) {
       content: 'XL';
     }
   }
