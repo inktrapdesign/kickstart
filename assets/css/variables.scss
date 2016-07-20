@@ -23,8 +23,8 @@ $double-spacing: $base-spacing * 2;
 $double-spacing-m: $base-spacing * 2;
 
 // Fonts
-$base-font-family: "Sofia Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$heading-font-family: "Sofia Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$base-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+$heading-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
 $icon-font-family: "Ionicons";
 
 // Type metrics
@@ -63,10 +63,10 @@ $base-border: $base-border-width solid $border-color;
 $base-border-radius: 5px;
 
 // Grid
-$gutter-width: 2rem;
+$gutter-width: 4rem;
 $half-gutter-width: $gutter-width / 2;
 
-$gutter-width-l: 4rem;
+$gutter-width-l: 6rem;
 $half-gutter-width-l: $gutter-width / 2;
 
 $max-width: 80rem;

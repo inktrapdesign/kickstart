@@ -12,7 +12,7 @@ img {
 }
 
 .image--left, .image--right {
-  margin-top: 5px !important;
+  margin-top: calc(#{$half-spacing} + 10px);
   width: 50%;
   margin-bottom: $base-spacing;
 }

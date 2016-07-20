@@ -10,6 +10,7 @@
   }
 }
 
+// Container with items that have no gutters
 .container--flush {
   padding: 0;
 
@@ -34,6 +35,11 @@
   .item {
     padding: 0;
   }
+}
+
+// Container with no padding
+.container--full {
+  padding: 0;
 }
 
 // Containers with borders
@@ -158,10 +164,10 @@
 }
 
 .item--with-spacing {
-  margin-bottom: $gutter-width;
+  margin-bottom: $half-gutter-width;
 
   @include media($l) {
-    margin-bottom: $gutter-width-l;
+    margin-bottom: $half-gutter-width-l;
   }
 }
 
