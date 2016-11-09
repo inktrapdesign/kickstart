@@ -2,7 +2,7 @@
 // --------------------------------------------------
 
 table {
-  @include font-feature-settings("kern", "liga", "tnum");
+  font-feature-settings: "kern", "liga", "tnum";
   
   border-collapse: collapse;
   margin: $half-spacing 0;

@@ -58,7 +58,7 @@ small, .small {
 }
 
 // Selected text style
-@include selection {
+::selection {
   background-color: $brand-color;
   color: #fff;
 }

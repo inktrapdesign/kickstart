@@ -51,40 +51,40 @@
 .container--alternate-reverse {
   @include media($m) {
     .row:nth-child(2n) {
-      @include flex-direction(row-reverse);
+      flex-direction: row-reverse;
     }
   }
 }
 
 // Row
 .row {
-  @include display(flex);
-  @include flex-direction(column);
-  @include flex-wrap(wrap);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 
   max-width: $max-width;
   margin: 0 auto;
 
   @include media($m) {
-    @include flex-direction(row);
+    flex-direction: row;
   }
 }
 
 .row--align-center {
-  @include justify-content(center);
+  justify-content: center;
 }
 
 .row--align-right {
-  @include justify-content(flex-end);
+  justify-content: flex-end;
 }
 
 .row--vertical-center {
-  @include align-items(center);
+  align-items: center;
 }
 
 // Items
 .item {
-  @include flex(1 0 auto);
+  flex: 1 0 auto;
 
   display: block;
   width: 100%;
@@ -102,40 +102,40 @@
 }
 
 .item--flex {
-  @include display(flex);
+  display: flex;
 }
 
 .item--full {
-  @include flex-basis(100%);
+  flex-basis: 100%;
   max-width: 100%;
 }
 
 .item--half {
-  @include flex-basis(100%);
+  flex-basis: 100%;
   width: 100%;
 
   @include media($m) {
-    @include flex-basis(50%);
+    flex-basis: 50%;
     max-width: 50%;
   }
 }
 
 .item--quarter {
-  @include flex-basis(100%);
+  flex-basis: 100%;
   width: 100%;
 
   @include media($m) {
-    @include flex-basis(25%);
+    flex-basis: 25%;
     max-width: 25%;
   }
 }
 
 .item--three-quarters {
-  @include flex-basis(100%);
+  flex-basis: 100%;
   width: 100%;
 
   @include media($m) {
-    @include flex-basis(75%);
+    flex-basis: 75%;
     max-width: 75%;
   }
 }
@@ -144,7 +144,7 @@
   max-width: 100%;
 
   @include media($m) {
-    @include flex-basis(33.3333%);
+    flex-basis: 33.3333%;
     max-width: 33.3333%;
   }
 }
@@ -153,7 +153,7 @@
   width: 100%;
 
   @include media($m) {
-    @include flex-basis(66.6666%);
+    flex-basis: 66.6666%;
     max-width: 66.6666%;
   }
 }
@@ -181,7 +181,7 @@
 }
 
 .content--vertical-center {
-  @include display(flex);
-  @include justify-content(center);
+  display: flex;
+  justify-content: center;
 }
 

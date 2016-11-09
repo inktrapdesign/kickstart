@@ -17,7 +17,6 @@ label {
   }
 }
 
-#{$all-text-inputs},
 select[multiple=multiple],
 textarea {
   background-color: $background-color;
@@ -47,7 +46,7 @@ textarea {
 }
 
 input[type="search"] {
-  @include appearance(none);
+  appearance: none;
 }
 
 input[type="checkbox"],

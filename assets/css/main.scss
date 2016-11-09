@@ -8,7 +8,6 @@ http://www.inktrap.co.uk
 
 // Frameworks
 @import "vendor/normalize";
-@import "bourbon";
 
 // Variables
 @import "variables";
@@ -17,8 +16,25 @@ http://www.inktrap.co.uk
 @import "mixins";
 
 // Styles
-@import "components/*";
-@import "partials/*";
+@import "components/animations.scss";
+@import "components/base.scss";
+@import "components/blockquotes.scss";
+@import "components/buttons.scss";
+@import "components/fallbacks.scss";
+@import "components/forms.scss";
+@import "components/grid.scss";
+@import "components/helpers.scss";
+@import "components/icons.scss";
+@import "components/images.scss";
+@import "components/links.scss";
+@import "components/lists.scss";
+@import "components/spacing.scss";
+@import "components/tables.scss";
+@import "components/typography.scss";
+
+@import "partials/header.scss";
+@import "partials/footer.scss";
+@import "partials/home.scss";
 
 // Plugins
 // @import "vendor/plugin";

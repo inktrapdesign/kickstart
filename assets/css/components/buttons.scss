@@ -2,7 +2,7 @@
 // --------------------------------------------------
 
 .btn {
-  @include transition(all $short-duration ease-in-out);
+  transition: all $short-duration ease-in-out;
 
   display: inline-block;
   color: #fff;
@@ -69,8 +69,8 @@
   }
 
   &:after {
-    @include transition(all $base-duration ease-in-out);
-    @include transform(scaleX(0));
+    transition: all $base-duration ease-in-out;
+    transform: scaleX(0);
 
     content: '';
     position: absolute;
@@ -83,7 +83,7 @@
   }
 
   &:hover:after {
-    @include transform(scaleX(1));
+    transform: scaleX(1);
 
     background-color: $action-color;
     visibility: visible;

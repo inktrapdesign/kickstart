@@ -2,7 +2,7 @@
 // --------------------------------------------------
 
 a {
-  @include transition(all $short-duration);
+  transition: all $short-duration;
 
   color: $action-color;
   font-weight: bold;
@@ -23,8 +23,8 @@ p a, .inline-link {
   position: relative;
 
   &:before {
-    @include transition(all $base-duration ease-in-out);
-    @include transform(scaleX(0));
+    transition: all $base-duration ease-in-out;
+    transform: scaleX(0);
 
     content: '';
     position: absolute;
@@ -37,7 +37,7 @@ p a, .inline-link {
   }
 
   &:hover:before {
-    @include transform(scaleX(1));
+    transform: scaleX(1);
 
     background-color: $action-color;
     visibility: visible;
@@ -61,8 +61,8 @@ p a, .inline-link {
   }
 
   &:after {
-    @include transition(all $base-duration ease-in-out);
-    @include transform(scaleX(0));
+    transition: all $base-duration ease-in-out;
+    transform: scaleX(0);
 
     content: '';
     position: absolute;
@@ -75,7 +75,7 @@ p a, .inline-link {
   }
 
   &:hover:after {
-    @include transform(scaleX(1));
+    transform: scaleX(1);
 
     background-color: $action-color;
     visibility: visible;
