@@ -1,10 +1,17 @@
 // Icons
 // --------------------------------------------------
 
-[data-icon]:before {
-  font-family: $icon-font-family;
-  content: attr(data-icon);
-  speak: none;
-  line-height: 1;
-  margin-top: 1em;
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.icon--small {
+  width: 16px;
+  height: 16px;
+}
+
+.icon--large {
+  width: 64px;
+  height: 64px;
 }

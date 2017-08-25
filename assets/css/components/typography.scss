@@ -4,6 +4,25 @@
 // Local fonts
 // @include font-face("Ionicons", "../fonts/ionicons", $file-formats: eot svg ttf woff);
 
+// Links
+a {
+  transition: all $short-duration;
+
+  color: $action-color;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: darken($action-color, 10%);
+    outline: none;
+  }
+
+  &:active {
+    color: darken($action-color, 20%);
+  }
+}
+
 // Paragraphs
 p, .p {
   font-size: 1rem;
@@ -79,4 +98,48 @@ hr {
   border-right: none;
   border-top: none;
   margin: $gutter-width 0;
+}
+
+// Quotes
+.blockquote {
+  clear: both;
+  width: 100%;
+  margin: $base-spacing 0 $base-spacing 0;
+  padding-left: $double-spacing;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: calc(100% - 14px);
+    top: 7px;
+    left: 2px;
+    background-color: $brand-color;
+  }
+}
+
+.blockquote__quote {
+  font-style: italic;
+  font-size: $h4-font-size;
+  text-indent: -0.4em;
+  margin-top: 0;
+  margin-bottom: $half-spacing;
+
+  &:before {
+    content: "\201C";
+  }
+
+  &:after {
+    content: "\201D";
+  }
+}
+
+.blockquote__source {
+  font-style: normal;
+
+  &:before {
+    content: "\2014";
+    margin-right: 0.2em;
+  }
 }

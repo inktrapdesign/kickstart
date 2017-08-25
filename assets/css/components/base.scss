@@ -6,22 +6,27 @@
   box-sizing: border-box;
 }
 
-// Always show scrollbar
-html {
-  overflow-y: scroll;
+
+body {
+  overflow-y: scroll; // Always show scrollbar
+  min-height: 100vh;
   font-size: $base-font-size;
+  font-family: $base-font-family;
+  color: $base-text-color;
+  line-height: $base-line-height;
+  background-color: $background-color;
+  text-size-adjust: none;
 
   @include media($m) {
-    font-size: $base-font-size-m !important;
+    font-size: $base-font-size-m;
   }
 }
 
 // Use ligatures, kerning and font smoothing
-
-body, 
-button, 
-input, 
-*:before, 
+body,
+button,
+input,
+*:before,
 *:after {
   font-feature-settings: "kern", "liga", "pnum";
 
@@ -29,11 +34,7 @@ input,
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Body styling
-body {
-  font-family: $base-font-family;
-  color: $body-text-color;
-  line-height: $base-line-height;
-  background-color: #fff;
-  text-size-adjust: none;
+// Selected text style
+::selection {
+  background-color: lighten($brand-color, 90%);
 }

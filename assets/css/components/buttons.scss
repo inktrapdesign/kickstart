@@ -2,21 +2,22 @@
 // --------------------------------------------------
 
 .btn {
-  transition: all $short-duration ease-in-out;
-
   display: inline-block;
-  color: #fff;
-  background-color: $action-color;
   padding: $half-spacing $base-spacing;
-  margin-right: $half-spacing;
+  color: $action-color;
+  background-color: transparent;
   font-family: $base-font-family;
-  font-weight: bold;
+  font-weight: 700;
   border-radius: $base-border-radius;
   border: none;
-  margin-top: $base-spacing;
+  cursor: pointer;
+  transition-property: color, background-color, border-color;
+  transition: $short-duration ease-in-out;
+  margin-bottom: 0;
 
-  &:hover, &:focus {
-    color: #fff;
+  &:hover,
+  &:focus {
+    color: darken($action-color, 10%);
     background-color: shade($action-color, 10%);
     outline: none;
   }
@@ -24,19 +25,41 @@
   &:active {
     background-color: shade($action-color, 20%);
   }
+
+  // Multiple buttons in a row
+  & + .btn {
+    margin-left: $base-spacing;
+  }
 }
 
-.btn--secondary {
-  background-color: $dark-color;
+// Sizes
+.btn--small {
+  padding: 0.5em 1em;
+}
 
-  &:hover, &:active {
+.btn--large {
+  padding: 1em 1.6em;
+}
+
+// Layout
+.btn--block {
+  width: 100%;
+  display: block;
+}
+
+// Types
+.btn--primary {
+  background-color: $brand-color;
+
+  &:hover,
+  &:active {
     background-color: shade($brand-color, 15%);
     color: #fff;
   }
 }
 
-.btn--large {
-  padding: 1em 1.6em;
+.btn--outline {
+
 }
 
 .btn--link {
@@ -57,71 +80,10 @@
     color: shade($action-color, 20%);
     background-color: transparent;
   }
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: calc(#{$half-spacing} - 2px);
-    left: 0;
-    background-color: tint($action-color, 60%);
-  }
-
-  &:after {
-    transition: all $base-duration ease-in-out;
-    transform: scaleX(0);
-
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: calc(#{$half-spacing} - 2px);
-    left: 0;
-    visibility: hidden;
-    background-color: $action-color;
-  }
-
-  &:hover:after {
-    transform: scaleX(1);
-
-    background-color: $action-color;
-    visibility: visible;
-  }
 }
 
-.btn--icon {
-  &:before, &:after {
-    @include icon-font;
-
-    display: inline-block;
-    width: 0.8em;
-    position: relative;
-    top: 1px;
-  }
-
-  &:before {
-    text-align: left;
-    margin-right: 0.2em;
-  }
-
-  &:after {
-    text-align: right;
-    margin-left: 0.2em;
-  }
-}
-
-.btn--forward {
-  @extend .btn--icon;
-
-  &:after {
-    font-size: 1.3em;
-    content: '\f10a';
-    top: 3px;
-  }
-}
-
-.btn--block {
-  width: 100%;
-  display: block;
+.btn--disabled
+.btn[disabled] {
+  pointer-events: none;
+  opacity: 0.6;
 }

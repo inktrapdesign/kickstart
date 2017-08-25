@@ -1,0 +1,40 @@
+// Modals
+// --------------------------------------------------
+
+.modal {
+  display: none;
+}
+
+.modal__header,
+.modal__content,
+.modal__footer {
+  padding: $base-spacing;
+
+  @include media($m) {
+    padding: $base-spacing-m;
+  }
+}
+
+.modal__header {
+  h1, h2, h3, h4, h5 {
+    margin-bottom: 0.3rem;
+    padding-right: 3rem;
+  }
+}
+
+.modal__content {
+  border-top: $base-border;
+
+  h1, h2, h3, h4, h5 {
+    margin-bottom: 0.3rem;
+    padding-right: 3rem;
+
+    @include media($s) {
+      padding-left: 3rem;
+    }
+  }
+}
+
+.modal__footer {
+  border-top: $base-border;
+}

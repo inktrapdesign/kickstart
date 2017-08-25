@@ -1,4 +1,4 @@
-/* 
+/*
 PROJECT_NAME
 Built by Inktrap
 http://www.inktrap.co.uk
@@ -6,35 +6,33 @@ http://www.inktrap.co.uk
 
 @charset "utf-8";
 
-// Frameworks
-@import "vendor/normalize";
-
-// Variables
+// Variables and mixins
 @import "variables";
-
-// Mixins
 @import "mixins";
 
-// Styles
-@import "components/animations.scss";
-@import "components/base.scss";
-@import "components/blockquotes.scss";
-@import "components/buttons.scss";
-@import "components/fallbacks.scss";
-@import "components/forms.scss";
-@import "components/grid.scss";
-@import "components/helpers.scss";
-@import "components/icons.scss";
-@import "components/images.scss";
-@import "components/links.scss";
-@import "components/lists.scss";
-@import "components/spacing.scss";
-@import "components/tables.scss";
-@import "components/typography.scss";
+// Vendor
+@import "vendor/normalize";
 
-@import "partials/header.scss";
-@import "partials/footer.scss";
-@import "partials/home.scss";
+// Components
+@import "components/animation";
+@import "components/base";
+@import "components/blockquotes";
+@import "components/buttons";
+@import "components/fallbacks";
+@import "components/forms";
+@import "components/grid";
+@import "components/helpers";
+@import "components/icons";
+@import "components/images";
+@import "components/links";
+@import "components/lists";
+@import "components/modals";
+@import "components/navigation";
+@import "components/spacing";
+@import "components/tables";
+@import "components/typography";
 
-// Plugins
-// @import "vendor/plugin";
+// Partials
+@import "partials/header";
+@import "partials/footer";
+@import "partials/home";

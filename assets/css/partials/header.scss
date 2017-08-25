@@ -1,96 +1,11 @@
 // Header
 // --------------------------------------------------
 
-/*.header {
-  @include transition(all 0.3s);
+.header {
 
-  padding-top: $half-spacing;
-  padding-bottom: $half-spacing;
-  margin-bottom: 0;
+}
 
-  @include media($m) {
-    padding-top: $base-spacing;
-    padding-bottom: $base-spacing;
-  }
-}*/
-
-.logo {
+.header__logo {
   display: block;
   height: 100%;
-}
-
-.nav {
-  display: block;
-  width: 100%;
-
-  @include media($l) {
-    float: right;
-    width: auto;
-  }
-}
-
-.nav__item {
-  display: block;
-  font-family: $base-font-family;
-  position: relative;
-
-  @include media($m) {
-    display: inline-block;
-    font-family: $base-font-family;
-    margin-right: 1em;
-  }
-
-  a {
-    display: block;
-    color: $body-text-color;
-    padding: 0.5em 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &.is-current {
-    border-bottom: 2px solid $body-text-color;
-  }
-
-  &:hover .nav {
-    @include media($m) {
-      display: block;
-    }
-  }
-}
-
-.nav__item--button {
-  background-color: $action-color;
-  border-radius: $base-border-radius;
-  padding-left: 0.8em;
-  padding-right: 0.8em;
-  margin-left: -0.8em;
-
-  @include media($m) {
-    margin-left: 0;
-  }
-
-  a {
-    color: #fff;
-  }
-}
-
-// Dropdown nav
-.nav__item .nav {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  top: 100%;
-  left: -$half-spacing;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.4);
-
-  .nav__item {
-    margin-left: 0;
-    padding-left: $half-spacing;
-    padding-right: $half-spacing;
-    white-space: nowrap;
-    width: 100%;
-  }
 }

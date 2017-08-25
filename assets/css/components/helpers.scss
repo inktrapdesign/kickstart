@@ -1,33 +1,11 @@
 // Helpers
 // --------------------------------------------------
 
-// Hide elements
-.hidden {
-  display: none;
-}
-
-// Hide elements until a specific breakpoint
-.hidden-until-m {
-  display: none;
-
-  @include media($m) {
-    display: block;
-  }
-}
-
-.hidden-until-l {
-  display: none;
-
-  @include media($l) {
-    display: block;
-  }
-}
-
 // Hidden but can still be seen by screen readers
-.sr-only {
+.screen-reader-only {
   position: absolute;
-  left: -999em;
-  top: -999em;
+  left: -9999em;
+  top: -9999em;
 }
 
 // Clearfix
@@ -36,34 +14,10 @@
   overflow: visible !important;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     clear: both;
     height: 0;
-  }
-}
-
-// Remove all margins
-.no-margin {
-  margin: 0;
-}
-
-// Grid testing
-// Add to the body to highlight the grid for debugging
-.grid-test {
-  .container {
-    background-color: goldenrod !important;
-    border: 1px solid darken(goldenrod, 20%);
-  }
-
-  .row {
-    background-color: fuchsia !important;
-    border: 1px solid darken(fuchsia, 20%);
-  }
-
-  .item {
-    background-color: aqua !important;
-    border: 1px solid darken(aqua, 20%);
   }
 }
 
@@ -73,33 +27,36 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: aqua;
+  background-color: #0ff;
   padding: 10px;
   font-weight: bold;
   font-size: 18px;
   z-index: 9999;
 
   &:before {
-    content: '-';
+    content: "-";
     width: 30px;
     display: block;
     text-align: center;
-    content: 'XS';
+
+    @include media($xs) {
+      content: "XS";
+    }
 
     @include media($s) {
-      content: 'S';
+      content: "S";
     }
 
     @include media($m) {
-      content: 'M';
+      content: "M";
     }
 
     @include media($l) {
-      content: 'L';
+      content: "L";
     }
 
     @include media($xl) {
-      content: 'XL';
+      content: "XL";
     }
   }
 }
