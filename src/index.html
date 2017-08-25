@@ -7,26 +7,29 @@
 
   <!-- Meta -->
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>Kickstart</title>
-
+  <meta name="application-name" content="Kickstart">
+  <meta name="apple-mobile-web-app-title" content="Kickstart">
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="home" href="{{ siteUrl }}" />
+  <link rel="home" href="">
 
-  <!-- Stylesheet -->
+  <!-- Theme colours and icons -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="icon" sizes="192x192" href="images/android-icon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="mask-icon" href="images/mask-icon.svg" color="#000000">
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-TileColor" content="#000000"/>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/main.css">
 
   <!-- Fonts -->
   <!-- Typekit or Google Fonts here -->
 
-  <!-- Theme colours and icons -->
-  <link rel="shortcut icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <meta name="apple-mobile-web-app-title" content="">
-  <meta name="application-name" content=""/>
-  <meta name="theme-color" content="">
 </head>
 
 <body>
@@ -36,15 +39,15 @@
     </div>
   <![endif]-->
 
-  <header class="container header">
+  <header class="container header" role="banner">
     <div class="row">
-      <div class="item">
-        <a href="#" class="logo">Kickstart</a>
+      <div class="item header__logo">
+        <a href="#" class="header__logo-link">Kickstart</a>
       </div>
 
-      <nav class="item">
-        <ul class="nav nav--main">
-          <li class="nav__item is-current"><a href="#">Home</a></li>
+      <nav class="item header__nav">
+        <ul class="nav nav--primary" role="navigation" aria-label="Main navigation">
+          <li class="nav__item is-active"><a href="#">Home</a></li>
           <li class="nav__item"><a href="#">Blog</a></li>
           <li class="nav__item"><a href="#">About</a></li>
           <li class="nav__item nav__item--button"><a href="#">Contact</a></li>
@@ -56,11 +59,17 @@
   <div class="container">
     <div class="row">
       <div class="item item--max-width">
-        <h1 class="h1">This is heading 1 text</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur <abbr title="Abbreviation">abbr</abbr> adipisicing elit. Nostrum blanditiis pariatur explicabo dolore, laborum laboriosam atque, <a href="#">inline link</a> asperiores culpa vitae aliquam <em>emphasis</em> commodi nobis repellendus! <strong>Strong</strong> debitis nostrum, repellendus quam impedit.</p>
-
-        <h2 class="h2">Heading two goes here</h2>
+        <h1 class="h1">This is heading one text</h1>
+        <h2 class="h2">This is heading two text</h2>
+        <h3 class="h3">This is heading three text</h3>
+        <h4 class="h4">This is heading four text</h4>
+        <h5 class="h5">This is heading five text</h5>
+        <h6 class="h6">This is heading six text</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur <abbr title="Abbreviation">abbr</abbr> adipisicing elit. Nostrum blanditiis pariatur explicabo dolore, laborum laboriosam atque, <a href="#">inline link</a> asperiores culpa vitae aliquam <em>emphasis</em> commodi nobis repellendus! <strong>strong</strong> debitis nostrum, repellendus quam impedit.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ea hic odit maiores tenetur laudantium nulla, ipsum dolorem labore repudiandae, debitis beatae rem modi aperiam cupiditate, in accusantium natus itaque.</p>
+        <p class="small">This is small print</p>
+
+        <h2 class="h2">Button styles</h2>
         <p>Vero blanditiis facere vel magni culpa adipisci aliquam quia, cupiditate accusamus expedita alias, reiciendis non veritatis facilis consectetur consequatur nulla inventore nesciunt.</p>
 
         <button class="btn">Button</button>
@@ -80,15 +89,6 @@
 
         <button class="btn btn--primary btn--block">Block button (primary)</button>
 
-        <h3 class="h3">Heading three</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-        <h3 class="h4">Heading four</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-        <h3 class="h5">Heading five</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
         <p class="h2">Paragraph that looks like h2</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ea hic odit maiores tenetur laudantium nulla, ipsum dolorem labore repudiandae, debitis beatae rem modi aperiam cupiditate, in accusantium natus itaque.</p>
 
@@ -97,22 +97,18 @@
           <cite class="blockquote__source">Sam Lester, Co-founder, Inktrap</cite>
         </blockquote>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae delectus maiores placeat, ipsum reprehenderit, perferendis id, nobis, assumenda non iste corporis rem odio inventore quam accusamus fugit accusantium tenetur nulla!</p>
-
-        <blockquote class="blockquote blockquote--right">
-          <p class="blockquote__quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus perspiciatis animi natus temporibus, ex!</p>
-          <cite class="blockquote__source">Sam Lester, Co-founder, Inktrap</cite>
-        </blockquote>
-
         <p>Mollitia, eius eum optio consectetur autem soluta libero, nam praesentium iure animi ut corporis vero numquam vitae rem enim laboriosam asperiores hic velit eos distinctio. Consequatur dolorum tempora mollitia unde.</p>
 
-        <p>Voluptatum expedita eveniet minima magni eligendi, autem quasi amet nemo nisi necessitatibus perferendis, consequuntur, minus libero eaque qui facilis molestias, laborum dolorum sint. Dolores, rerum, odit. Officiis nihil officia, eum.</p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates mollitia dignissimos aliquid quidem saepe odio magni. Dolores voluptatem reiciendis veniam non. Velit quam natus, asperiores autem et distinctio. Laboriosam, totam.</p>
-
-        <img src="http://placehold.it/600x400" alt="" class="image image--left">
+        <figure>
+          <img src="http://placehold.it/600x400" alt="">
+        </figure>
 
         <p>Quaerat itaque quibusdam temporibus sint ipsum nulla mollitia porro quia. Quaerat architecto, possimus aliquid non harum commodi! Est, id, quam beatae dolore quos iure consequuntur, nulla blanditiis repellendus quo aperiam.</p>
+
+        <figure>
+          <img src="http://placehold.it/600x400" alt="">
+          <figcaption>Captions look like this</figcaption>
+        </figure>
 
         <p>Consequuntur omnis saepe totam itaque quidem labore quae non dolore quam possimus sapiente cupiditate quisquam recusandae natus fugit at ea, perspiciatis tempora laboriosam nisi, tenetur. Commodi eveniet libero, aspernatur. Velit.</p>
       </div>
@@ -122,35 +118,35 @@
   <div class="container">
     <div class="row">
       <div class="item item--half item--with-spacing">
-        <img src="http://placehold.it/600x400" alt="" class="image image--full">
+        <img src="http://placehold.it/600x400" alt="">
         <h2 class="h3">Project name</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis eos necessitatibus incidunt.</p>
-        <a href="#" class="action-link">View project</a>
+        <a href="#">View project</a>
       </div>
 
       <div class="item item--half item--with-spacing">
-        <img src="http://placehold.it/600x400" alt="" class="image image--full">
+        <img src="http://placehold.it/600x400" alt="">
         <h2 class="h3">Project name</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis eos necessitatibus incidunt.</p>
-        <a href="#" class="action-link">View project</a>
+        <a href="#">View project</a>
       </div>
 
       <div class="item item--half item--with-spacing">
-        <img src="http://placehold.it/600x400" alt="" class="image image--full">
+        <img src="http://placehold.it/600x400" alt="">
         <h2 class="h3">Project name</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis eos necessitatibus incidunt.</p>
-        <a href="#" class="action-link">View project</a>
+        <a href="#">View project</a>
       </div>
     </div>
   </div>
 
-  <div class="container container--full">
+  <div class="container">
     <img src="http://placehold.it/2000x600" alt="">
   </div>
 
   <div class="container">
     <div class="row">
-      <div class="item item--full">
+      <div class="item">
         <h2 class="h3">Grid test</h2>
       </div>
     </div>
@@ -217,9 +213,11 @@
   <div class="breakpoint"></div>
 
   <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
   <!-- Javascript -->
-  <script src="assets/js/min/load-min.js"></script>
+  <script src="js/vendor.min.js"></script>
+  <script src="js/load.min.js"></script>
 </body>
 </html>
