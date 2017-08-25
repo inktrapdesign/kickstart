@@ -24,17 +24,11 @@
 }*/
 
 // Heading sizes
-@mixin heading-style($size, $margin: false) {
+@mixin heading-style($size) {
   font-family: $heading-font-family;
   line-height: $heading-line-height;
   font-weight: $heading-weight;
   color: $heading-text-color;
-
-  @if $margin == true {
-    margin: $heading-margin;
-  } @else {
-    margin: 0;
-  }
 
   @if $size == 1 {
     font-size: $h1-font-size;

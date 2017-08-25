@@ -4,11 +4,31 @@
 !/craft/storage/rebrand/*
 /craft/config/db.php
 /craft/config/license.key
-/public_html/uploads/*
-/public_html/.htaccess
+/public/uploads/*
+/public/.htaccess
+
+# macOS
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
 # Other stuff
-.DS_Store
 Thumbs.db
 .cache
 .project
@@ -17,9 +37,6 @@ Thumbs.db
 *.esproj
 *.sublime-workspace
 *.sublime-project
-_notes
-dwsync.xml
 logs/*
 node_modules
-.codekit-cache
 .sass-cache

@@ -94,7 +94,8 @@ $ease-in-out-sine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
 $ease-out-quint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
 
 // Breakpoints
-$s: 440px; // Mobile landscape
-$m: 720px; // Tablet portrait
-$l: 960px; // Desktop and tablet landscape
-$xl: 1200px; // Large desktop and TV
+$xs: 288px; // Mobile portrait
+$s: 560px; // Mobile landscape
+$m: 760px; // Tablet portrait
+$l: 1020px; // Desktop and tablet landscape
+$xl: 1240px; // Large desktop and TV
