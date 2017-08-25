@@ -6,7 +6,7 @@
 
 // Links
 a {
-  transition: all $short-duration;
+  transition: color $short-duration $ease-out-quint;
 
   color: $action-color;
   font-weight: bold;
@@ -24,18 +24,15 @@ a {
 }
 
 // Paragraphs
-p, .p {
+p,
+.p {
   font-size: 1rem;
-  margin-top: $half-spacing;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: $paragraph-spacing;
 }
 
-.p-large {
-  font-size: $h4-font-size;
-
-  @include media($m) {
-    font-size: $h4-font-size-m;
-  }
+.p--large {
+  font-size: 1.4rem;
 }
 
 // Headings
@@ -142,4 +139,8 @@ hr {
     content: "\2014";
     margin-right: 0.2em;
   }
+}
+
+abbr[title] {
+  text-decoration: none;
 }

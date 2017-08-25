@@ -36,5 +36,5 @@ input,
 
 // Selected text style
 ::selection {
-  background-color: lighten($brand-color, 90%);
+  background-color: rgba($brand-color, 0.3);
 }

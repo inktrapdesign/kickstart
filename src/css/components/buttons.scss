@@ -9,26 +9,27 @@
   font-family: $base-font-family;
   font-weight: 700;
   border-radius: $base-border-radius;
-  border: none;
   cursor: pointer;
-  transition-property: color, background-color, border-color;
-  transition: $short-duration ease-in-out;
+  transition-property: color, background-color, border-color, width;
+  transition: $base-duration $ease-out-quint;
   margin-bottom: 0;
+  border: 3px solid transparent;
+  margin-right: $half-spacing;
+  margin-bottom: $half-spacing;
+  line-height: 1.2;
 
   &:hover,
   &:focus {
-    color: darken($action-color, 10%);
-    background-color: shade($action-color, 10%);
+    color: shade($action-color, 20%);
     outline: none;
   }
 
   &:active {
-    background-color: shade($action-color, 20%);
+    color: shade($action-color, 40%);
   }
 
-  // Multiple buttons in a row
-  & + .btn {
-    margin-left: $base-spacing;
+  &:last-child {
+    margin-right: 0;
   }
 }
 
@@ -50,40 +51,51 @@
 // Types
 .btn--primary {
   background-color: $brand-color;
+  color: #fff;
 
   &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: #fff;
+  }
+
   &:active {
-    background-color: shade($brand-color, 15%);
+    background-color: shade($action-color, 40%);
     color: #fff;
   }
 }
 
 .btn--outline {
-
-}
-
-.btn--link {
+  border-color: $brand-color;
   background-color: transparent;
-  color: $action-color;
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: $half-spacing;
-  margin-right: $half-spacing;
+  color: $brand-color;
 
-  &:hover, &:focus {
-    color: shade($action-color, 10%);
-    background-color: transparent;
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: shade($action-color, 20%);
+    color: shade($action-color, 20%);
   }
 
   &:active {
-    color: shade($action-color, 20%);
-    background-color: transparent;
+    border-color: shade($action-color, 40%);
+    color: shade($action-color, 40%);
   }
 }
 
-.btn--disabled
+.btn--link {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// States
+.btn--disabled,
 .btn[disabled] {
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.5;
+}
+
+.btn--loading {
+  pointer-events: none;
+  text-indent: -9999rem;
 }

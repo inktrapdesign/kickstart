@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 10]><!--> <html class="no-js ie10" lang="en"> <!--<![endif]-->
+<!--[if IE 10]><!--><html class="no-js ie10" lang="en"><!--<![endif]-->
 <html class="no-js" lang="en">
 <head>
   <!-- Set js class -->
@@ -16,26 +16,24 @@
   <link rel="home" href="{{ siteUrl }}" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="css/main.css">
 
   <!-- Fonts -->
   <!-- Typekit or Google Fonts here -->
 
   <!-- Theme colours and icons -->
-  <link rel="shortcut icon" href="/assets/images/favicon.ico">
-  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="">
   <meta name="application-name" content=""/>
   <meta name="theme-color" content="">
-
-  <!-- Polyfills -->
-  <!-- Javascript polyfills here -->
 </head>
 
-<body class="">
-  <!-- Browser upgrade notice -->
+<body>
   <!--[if lte IE 10]>
-    <p class="browser-upgrade">You are using an outdated browser. Please <a href="http://browsehappy.com">upgrade your browser</a> to improve your experience.</p>
+    <div class="notice">
+      <p>You are using an outdated browser. Please <a href="http://browsehappy.com">upgrade your browser</a> to improve your experience.</p>
+    </div>
   <![endif]-->
 
   <header class="container header">
@@ -65,9 +63,22 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ea hic odit maiores tenetur laudantium nulla, ipsum dolorem labore repudiandae, debitis beatae rem modi aperiam cupiditate, in accusantium natus itaque.</p>
         <p>Vero blanditiis facere vel magni culpa adipisci aliquam quia, cupiditate accusamus expedita alias, reiciendis non veritatis facilis consectetur consequatur nulla inventore nesciunt.</p>
 
-        <a href="#" class="btn">This is an a</a>
-        <button class="btn">This is a button</button>
-        <a href="#" class="btn btn--link">This is a link button</a>
+        <button class="btn">Button</button>
+        <a href="#" class="btn">Link button</a>
+
+        <button class="btn btn--primary">Button (primary)</button>
+        <a href="#" class="btn btn--primary">Link button(primary)</a>
+        <button class="btn btn--primary" disabled>Disabled button (primary)</button>
+        <button class="btn btn--primary btn--loading">Loading button (primary)</button>
+
+        <button class="btn btn--outline">Button (outline)</button>
+        <a href="#" class="btn btn--outline">Link button (outline)</a>
+        <button class="btn btn--outline" disabled>Button (outline)</button>
+
+        <button class="btn btn--link">Button (text)</button>
+        <a href="#" class="btn btn--link">Link button (text)</a>
+
+        <button class="btn btn--primary btn--block">Block button (primary)</button>
 
         <h3 class="h3">Heading three</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -207,7 +218,7 @@
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  
+
   <!-- Javascript -->
   <script src="assets/js/min/load-min.js"></script>
 </body>

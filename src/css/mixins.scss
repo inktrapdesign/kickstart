@@ -15,13 +15,13 @@
 }
 
 // Tint and shade
-/*@function tint($color, $percentage) {
+@function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
 }
 
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
-}*/
+}
 
 // Heading sizes
 @mixin heading-style($size) {
