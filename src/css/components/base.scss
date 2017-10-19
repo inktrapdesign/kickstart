@@ -6,20 +6,22 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: $base-font-size;
+
+  @include media($m) {
+    font-size: $base-font-size-m;
+  }
+}
 
 body {
   overflow-y: scroll; // Always show scrollbar
   min-height: 100vh;
-  font-size: $base-font-size;
   font-family: $base-font-family;
   color: $base-text-color;
   line-height: $base-line-height;
   background-color: $background-color;
   text-size-adjust: none;
-
-  @include media($m) {
-    font-size: $base-font-size-m;
-  }
 }
 
 // Use ligatures, kerning and font smoothing

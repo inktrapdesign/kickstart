@@ -30,10 +30,10 @@ $base-spacing: 1rem;
 $base-spacing-m: 2rem;
 
 $half-spacing: $base-spacing / 2;
-$half-spacing-m: $base-spacing / 2;
+$half-spacing-m: $base-spacing-m / 2;
 
 $double-spacing: $base-spacing * 2;
-$double-spacing-m: $base-spacing * 2;
+$double-spacing-m: $base-spacing-m * 2;
 
 // Typography
 $base-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
