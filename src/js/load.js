@@ -5,4 +5,8 @@ $(document).ready(function() {
     event.preventDefault();
     $('body').toggleClass('nav-visible');
   });
+
+  // Svg polyfil
+  svg4everybody();
+  
 });
