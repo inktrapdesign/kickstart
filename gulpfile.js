@@ -25,7 +25,7 @@ gulp.task('css', function() {
   gulp.src('src/css/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed', precision: 8}).on('error', sass.logError))
-    .pipe(autoprefixer({browsers: ['ie 10', 'last 2 versions', 'last 4 iOS major versions']}))
+    .pipe(autoprefixer({browsers: ['ie 10', 'last 2 versions']}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
     .pipe(livereload());
@@ -41,12 +41,25 @@ gulp.task('js', function() {
     }))
     .pipe(gulp.dest('dist/js'))
     .pipe(livereload());
+});
 
-  gulp.src('src/js/vendor/*.js')
-    .pipe(newer('dist/js'))
+// Concat and move vendor js
+gulp.task('vendor-files', function() {
+
+  var jsFiles = [
+    'src/js/vendor/*.js'
+  ]
+
+  gulp.src(jsFiles)
+    .pipe(newer('dist/js/vendor'))
     .pipe(uglify())
     .pipe(concat('vendor.min.js'))
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('dist/js/vendor'))
+    .pipe(livereload());
+
+  gulp.src('node_modules/jquery/dist/jquery.min.js')
+    .pipe(newer('dist/js/vendor'))
+    .pipe(gulp.dest('dist/js/vendor'))
     .pipe(livereload());
 });
 
