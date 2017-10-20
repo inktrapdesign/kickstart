@@ -25,7 +25,7 @@ gulp.task('css', function() {
   gulp.src('src/css/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed', precision: 8}).on('error', sass.logError))
-    .pipe(autoprefixer('ie 10', 'last 2 versions'))
+    .pipe(autoprefixer({browsers: ['ie 10', 'last 2 versions', 'last 4 iOS major versions']}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
     .pipe(livereload());
