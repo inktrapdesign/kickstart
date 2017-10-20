@@ -2,34 +2,7 @@
 <!--[if IE 10]><!--><html class="no-js ie10" lang="en"><!--<![endif]-->
 <html class="no-js" lang="en">
 <head>
-  <!-- Set js class -->
-  <script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
-
-  <!-- Meta -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <title>Kickstart</title>
-  <meta name="application-name" content="Kickstart">
-  <meta name="apple-mobile-web-app-title" content="Kickstart">
-  <meta name="description" content="">
-  <link rel="home" href="">
-
-  <!-- Theme colours and icons -->
-  <link rel="shortcut icon" href="images/favicon.ico">
-  <link rel="icon" sizes="192x192" href="images/android-icon.png">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="mask-icon" href="images/mask-icon.svg" color="#000000">
-  <meta name="theme-color" content="#000000">
-  <meta name="msapplication-TileColor" content="#000000"/>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/main.css">
-
-  <!-- Fonts -->
-  <!-- Typekit or Google Fonts here -->
-
+  {% include 'partials/head.html' %}
 </head>
 
 <body>
@@ -209,15 +182,11 @@
     </div>
   </div>
 
+  {% include 'partials/footer.html' %}
+
   <!-- Breakpoint indicator -->
   <div class="breakpoint"></div>
 
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
-
-  <!-- Javascript -->
-  <script src="js/vendor/vendor.min.js"></script>
-  <script src="js/load.min.js"></script>
+  {% include 'partials/scripts.html' %}
 </body>
 </html>

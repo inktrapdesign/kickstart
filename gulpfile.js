@@ -66,7 +66,7 @@ gulp.task('vendor-files', function() {
 
 // Generate complete set of templates from Twig files
 gulp.task('templates', function () {
-  gulp.src('src/*.html')
+  gulp.src('src/templates/*.html')
     .pipe(twig())
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest('dist'))
