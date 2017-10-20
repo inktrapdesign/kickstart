@@ -8,5 +8,5 @@ $(document).ready(function() {
 
   // Svg polyfil
   svg4everybody();
-  
+
 });
