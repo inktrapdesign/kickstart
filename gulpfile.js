@@ -11,14 +11,14 @@ var prettify = require('gulp-html-prettify');
 var imagemin = require('gulp-imagemin');
 var svgSprite = require('gulp-svg-sprite');
 var connect = require('gulp-connect');
-var livereload = require('gulp-livereload');
 var clean = require('gulp-clean');
+var browserSync = require('browser-sync').create();
 
 // Build
-gulp.task('build', ['css', 'js', 'templates', 'icons', 'images']);
+gulp.task('build', ['css', 'js', 'vendor-files', 'templates', 'icons', 'images']);
 
 // Build and run a server
-gulp.task('default', ['build', 'connect', 'watch']);
+gulp.task('default', ['build', 'watch']);
 
 // Process and compress Sass files
 gulp.task('css', function() {
@@ -28,7 +28,7 @@ gulp.task('css', function() {
     .pipe(autoprefixer({browsers: ['ie 10', 'last 2 versions']}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
-    .pipe(livereload());
+    .pipe(browserSync.stream());
 });
 
 // Compress and combine JS
@@ -40,7 +40,7 @@ gulp.task('js', function() {
       suffix: ".min"
     }))
     .pipe(gulp.dest('dist/js'))
-    .pipe(livereload());
+    .pipe(browserSync.stream());
 });
 
 // Concat and move vendor js
@@ -56,12 +56,12 @@ gulp.task('vendor-files', function() {
     .pipe(uglify())
     .pipe(concat('vendor.min.js'))
     .pipe(gulp.dest('dist/js/vendor'))
-    .pipe(livereload());
+    .pipe(browserSync.stream());
 
   gulp.src('node_modules/jquery/dist/jquery.min.js')
     .pipe(newer('dist/js/vendor'))
     .pipe(gulp.dest('dist/js/vendor'))
-    .pipe(livereload());
+    .pipe(browserSync.stream());
 });
 
 // Generate complete set of templates from Twig files
@@ -70,12 +70,12 @@ gulp.task('templates', function () {
     .pipe(twig())
     .pipe(prettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest('dist'))
-    .pipe(livereload());
+    .pipe(browserSync.stream());
 });
 
 // Create icon sprite
 gulp.task('icons', function () {
-  return gulp.src('src/images/icons/*.svg')
+  gulp.src('src/images/icons/*.svg')
     .pipe(svgSprite({
       mode: {
         defs: {
@@ -100,7 +100,7 @@ gulp.task('icons', function () {
       }
     }))
     .pipe(gulp.dest('dist/images'))
-    .pipe(livereload());
+    .pipe(browserSync.stream());
 });
 
 // Process and compress images
@@ -111,30 +111,27 @@ gulp.task('images', function () {
     .pipe(newer('dist/images'))
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'))
-    .pipe(livereload());
+    .pipe(browserSync.stream());
 
   // Move icons, SVGs and precompressed files
   gulp.src(['src/images/*.ico', 'src/images/**/*.svg', '!src/images/icons/*.svg'])
     .pipe(newer('dist/images'))
     .pipe(gulp.dest('dist/images'))
-    .pipe(livereload());
-});
-
-// Run a local server
-gulp.task('connect', function() {
-  connect.server({
-    root: 'dist'
-  });
+    .pipe(browserSync.stream());
 });
 
 // Watch for changes and reload the page
-gulp.task('watch', function () {
-  livereload.listen();
-  gulp.watch('src/css/**/*.scss', ['css']);
-  gulp.watch('src/js/**/*.js', ['js']);
-  gulp.watch('src/**/*.html', ['templates']);
-  gulp.watch('src/images/icons/*.svg', ['icons']);
-  gulp.watch(['src/images/**/*.svg','src/images/**/*.jpg','src/images/**/*.png', 'src/images/**/*.ico', '!src/images/icons/*.svg'], ['images'])
+gulp.task('watch', function() {
+    browserSync.init({
+        server: "./dist"
+        //proxy: "http://localhost:8888/"
+    });
+
+    gulp.watch('src/css/**/*.scss', ['css']);
+    gulp.watch('src/js/**/*.js', ['js']);
+    gulp.watch('src/**/*.html', ['templates']);
+    gulp.watch('src/images/icons/*.svg', ['icons']);
+    gulp.watch(['src/images/**/*.svg','src/images/**/*.jpg','src/images/**/*.png', 'src/images/**/*.ico', '!src/images/icons/*.svg'], ['images']);
 });
 
 // Remove the dist folder
