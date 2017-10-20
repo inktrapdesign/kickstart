@@ -81,6 +81,21 @@ gulp.task('icons', function () {
           dest: '.',
           sprite: 'icons-sprite.svg'
         }
+      },
+      shape: {
+        transform: [
+          {
+            svgo: {
+              plugins: [
+                {
+                  convertColors: {
+                    currentColor: true
+                  }
+                },
+              ]
+            }
+          }
+        ]
       }
     }))
     .pipe(gulp.dest('dist/images'))
