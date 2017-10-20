@@ -47,7 +47,8 @@ gulp.task('js', function() {
 gulp.task('vendor-files', function() {
 
   var jsFiles = [
-    'src/js/vendor/*.js'
+    'src/js/vendor/*.js',
+    'node_modules/svg4everybody/dist/svg4everybody.js'
   ]
 
   gulp.src(jsFiles)
