@@ -1,0 +1,16 @@
+<header class="container header" role="banner">
+  <div class="row">
+    <div class="item header__logo">
+      <a href="#" class="header__logo-link">Kickstart</a>
+    </div>
+
+    <nav class="item header__nav">
+      <ul class="nav nav--primary" role="navigation" aria-label="Main navigation">
+        <li class="nav__item {% if pageName == 'home' %}is-active{% endif %}"><a href="#">Home</a></li>
+        <li class="nav__item {% if pageName == 'blog' %}is-active{% endif %}"><a href="#">Blog</a></li>
+        <li class="nav__item {% if pageName == 'about' %}is-active{% endif %}"><a href="#">About</a></li>
+        <li class="nav__item nav__item--button {% if pageName == 'contact' %}is-active{% endif %}"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

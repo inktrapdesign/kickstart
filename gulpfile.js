@@ -123,8 +123,9 @@ gulp.task('images', function () {
 // Watch for changes and reload the page
 gulp.task('watch', function() {
     browserSync.init({
-        server: "./dist"
-        //proxy: "http://localhost:8888/"
+        server: "./dist",
+        //proxy: "http://localhost:8888/",
+        directory: true
     });
 
     gulp.watch('src/css/**/*.scss', ['css']);

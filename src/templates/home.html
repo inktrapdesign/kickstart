@@ -1,34 +1,10 @@
-<!DOCTYPE html>
-<!--[if IE 10]><!--><html class="no-js ie10" lang="en"><!--<![endif]-->
-<html class="no-js" lang="en">
-<head>
-  {% include 'partials/head.html' %}
-</head>
+{% set pageName = 'guides' %}
 
-<body>
-  <!--[if lte IE 10]>
-    <div class="notice">
-      <p>You are using an outdated browser. Please <a href="http://browsehappy.com">upgrade your browser</a> to improve your experience.</p>
-    </div>
-  <![endif]-->
+{% extends "layouts/default.html" %}
 
-  <header class="container header" role="banner">
-    <div class="row">
-      <div class="item header__logo">
-        <a href="#" class="header__logo-link">Kickstart</a>
-      </div>
+{% block content %}
 
-      <nav class="item header__nav">
-        <ul class="nav nav--primary" role="navigation" aria-label="Main navigation">
-          <li class="nav__item is-active"><a href="#">Home</a></li>
-          <li class="nav__item"><a href="#">Blog</a></li>
-          <li class="nav__item"><a href="#">About</a></li>
-          <li class="nav__item nav__item--button"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+<main class="home">
   <div class="container">
     <div class="row">
       <div class="item item--max-width">
@@ -181,12 +157,6 @@
       </div>
     </div>
   </div>
+</div>
 
-  {% include 'partials/footer.html' %}
-
-  <!-- Breakpoint indicator -->
-  <div class="breakpoint"></div>
-
-  {% include 'partials/scripts.html' %}
-</body>
-</html>
+{% endblock %}
